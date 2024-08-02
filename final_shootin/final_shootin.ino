@@ -25,9 +25,9 @@ void setup() {
 //   myservo.write(90);
 // }fvoid shoot(){
   // if (ch5>=1015){
-    digitalWrite(IN1, HIGH);
-    digitalWrite(IN2, LOW);
-    }
+    // digitalWrite(IN1, HIGH);
+    // digitalWrite(IN2, LOW);
+    // }
   // else if (ch5<=1015){
   //   digitalWrite(IN1, LOW);
   //   digitalWrite(IN2, HIGH);
