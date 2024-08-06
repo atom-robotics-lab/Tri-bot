@@ -23,6 +23,7 @@ void setup() {
 //   myServo.write(180);
 //   delay(1000);
 //   myservo.write(90);
+
 // }fvoid shoot(){
   // if (ch5>=1015){
     // digitalWrite(IN1, HIGH);
@@ -40,10 +41,10 @@ void loop() {
   Serial.print("ch5: ");
   Serial.println(ch5);
   
-  if (ch5>=1015){
+  if (ch5>=1550 && ch5<=2060){
   myServo.write(180);
   Serial.println("writing to servo");
-  delay(1000);
+
   myServo.write(90);
   Serial.println("stopping servo");
   digitalWrite(IN1, HIGH);

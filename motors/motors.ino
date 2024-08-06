@@ -1,6 +1,6 @@
 //ch3 ch2 is forwardback, ch1 ch4 leftright
 int lowCh1 = 1180;
-int midCh1 = 1550;
+int midCh1 = 1465;
 int highCh1 = 1975;
 int lowCh3 = 1019;
 int midCh3 = 1400;
@@ -8,24 +8,39 @@ int highCh3 = 1800;
 int ping = 20;
 int ch1;//throttle
 int ch3;//L/R
+
+// df ke pins
+
 int INA1 = 3;  
 int INB1 = 4;
-int INA2 = 6;
-int INB2 = 7;
 int P1 = 2;
-int P2 = 5;
+
+//bts ke pins
+
+int RP = 5; 
+int LP = 6;
+int R_EN = 8;
+int L_EN = 7;
+
+
 void setup() {
   pinMode(12, INPUT);
   pinMode(13, INPUT);
   pinMode(INA1, OUTPUT);
   pinMode(INB1, OUTPUT);
-  pinMode(INA2, OUTPUT);
-  pinMode(INB2, OUTPUT);
+  pinMode(P1, OUTPUT);
+  pinMode(RP, OUTPUT);
+  pinMode(LP, OUTPUT);
+  pinMode(R_EN, OUTPUT);
+  pinMode(L_EN, OUTPUT);
   Serial.begin(9600);
   delay(100);
 }
 void loop() {
   delay(50);
+    digitalWrite(R_EN, HIGH);
+  digitalWrite(L_EN, HIGH);
+
   ch1 = pulseIn(12, HIGH, 25000);
   // delay(10);
   ch3 = pulseIn(13, HIGH, 25000);
@@ -51,10 +66,12 @@ void loop() {
 
     digitalWrite(INA1, LOW);
     digitalWrite(INB1, LOW); //Motor 1 stop 
-    digitalWrite(INA2, LOW);
-    digitalWrite(INB2, LOW); //Motor 2 stop 
+    // digitalWrite(INA2, LOW);
+    // digitalWrite(INB2, LOW); //Motor 2 stop 
     analogWrite(P1, 0);
-    analogWrite(P2, 0);
+    analogWrite(RP, 0);
+    analogWrite(LP, 0);
+
     Serial.print("At Rest\n");
   }
 
@@ -69,11 +86,14 @@ void forwardbackward() {
       Serial.print(val1);
       digitalWrite(INA1, HIGH);
       digitalWrite(INB1, LOW); //Motor 1 forward 
-      digitalWrite(INA2, HIGH);
-      digitalWrite(INB2, LOW); //Motor 2 forward
-      analogWrite(P1, val1);
-      analogWrite(P2, val1);  
-
+      // digitalWrite(INA2, HIGH);
+      // digitalWrite(INB2, LOW); //Motor 2 forward
+      // analogWrite(P1, val1);
+      // analogWrite(P2, val1);  
+      analogWrite(P1, 255);
+      analogWrite(RP, 0);
+      analogWrite(LP, 255);
+       
   }
   //forward
   else if (ch3>=midCh3+ping && ch3<=highCh3) 
@@ -84,10 +104,13 @@ void forwardbackward() {
     Serial.print(val2);
     digitalWrite(INA1, LOW);
     digitalWrite(INB1, HIGH); //Motor 1 forward 
-    digitalWrite(INA2, LOW);
-    digitalWrite(INB2, HIGH); //Motor 2 backward
-    analogWrite(P1, val2);
-    analogWrite(P2, val2);  
+    // digitalWrite(INA2, LOW);
+    // digitalWrite(INB2, HIGH); //Motor 2 backward
+    // analogWrite(P1, val2);
+    // analogWrite(P2, val2);  
+    analogWrite(P1, 255);
+    analogWrite(RP, 255);
+    analogWrite(LP, 0);  
   } 
   Serial.println("");
 }
@@ -103,10 +126,13 @@ void leftright() {
       Serial.print(val3);
       digitalWrite(INA1, HIGH);
       digitalWrite(INB1, LOW); //Motor 1 forward 
-      digitalWrite(INA2, LOW);
-      digitalWrite(INB2, HIGH); //Motor 2 backward
-      analogWrite(P1, val3);
-      analogWrite(P2, val3);  
+      // digitalWrite(INA2, LOW);
+      // digitalWrite(INB2, HIGH); //Motor 2 backward
+      // analogWrite(P1, val3);
+      // analogWrite(P2, val3);
+      analogWrite(P1, 255);
+      analogWrite(RP, 255);
+      analogWrite(LP, 0);
   }
     // left
   if (ch1>=lowCh1 && ch1<=midCh1-ping) {
@@ -115,10 +141,14 @@ void leftright() {
     Serial.println(val4);
       digitalWrite(INA1, LOW); // motor bec
       digitalWrite(INB1, HIGH); 
-      digitalWrite(INA2, HIGH); //motor for
-      digitalWrite(INB2, LOW); 
-      analogWrite(P1, val4);
-      analogWrite(P2, val4);  
+      // digitalWrite(INA2, HIGH); //motor for
+      // digitalWrite(INB2, LOW); 
+      // analogWrite(P1, val4);
+      // analogWrite(P2, val4);  
+      analogWrite(P1, 255);
+      analogWrite(RP, 0);
+      analogWrite(LP, 255); 
+
   }
   Serial.println("");
 }
