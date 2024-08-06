@@ -4,7 +4,7 @@ This repository focuses on building a versatile robot equipped with tri-spoke wh
 ## About the Project
 This project aims to develop a comprehensive robotic system that can overcome various physical obstacles such as stairs and bricks using tri-spoke wheels. The robot is also equipped with a shooting mechanism and is controlled using a Flysky remote. The construction involves the use of pipes, 3D-printed components, and various electronic parts.
 
-![WhatsApp Image 2024-08-06 at 19 55 34](https://github.com/user-attachments/assets/424e4e84-151d-4ae4-8384-289f6acf38e5)
+<img src="https://github.com/user-attachments/assets/424e4e84-151d-4ae4-8384-289f6acf38e5" alt="Tribot Image" width="500"/>
 
 ### Built With
 
@@ -36,19 +36,16 @@ Ensure that all electronic connections are secure and power on the robot.
 ### 2. Using the Flysky Remote
 Operate the robot using the Flysky remote control. The controls allow for navigation and shooting functionality.
 
-![tribot_control](link_to_control_image)
-
 ### 3. Overcoming Obstacles
 Test the robot's ability to climb stairs and navigate over bricks. Adjust the tri-spoke wheels if necessary for optimal performance.
 
 ## Testing
+<img src= "https://github.com/user-attachments/assets/bea8e890-628a-44a2-ad41-7f661e53381b" height="400"/>
 
 To see the robot in action, conduct various tests including:
 1. Climbing stairs
 2. Navigating over bricks
 3. Shooting projectiles
-
-![tribot_test](link_to_test_image)
 
 ## Contributing
 
