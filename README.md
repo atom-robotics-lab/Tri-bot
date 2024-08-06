@@ -10,7 +10,7 @@ This project aims to develop a comprehensive robotic system that can overcome va
 
 * [![Flysky](https://img.shields.io/badge/Flysky-%23000000.svg?style=for-the-badge&logo=flysky&logoColor=white)](https://www.flysky-cn.com/)
 * [![3D Printing](https://img.shields.io/badge/3D_Printing-%23007BFF.svg?style=for-the-badge&logo=3dprinting&logoColor=white)](https://www.3dhubs.com/)
-* [![Electronics](https://img.shields.io/badge/Electronics-%23F39C12.svg?style=for-the-badge&logo=electronics&logoColor=white)](https://www.digikey.com/)
+* [![Arduino IDE](https://img.shields.io/badge/Arduino_IDE-%23F39C12.svg?style=for-the-badge&logo=electronics&logoColor=white)](https://www.arduino.cc/en/software)
 
 ## Getting Started with the Project
 Follow these instructions to set up this project on your system.
